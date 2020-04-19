@@ -36,7 +36,7 @@ class RatesProviderTests {
         apiClient = Mockito.mock(ForeignExchangeRatesApiClient.class);
         provider = new RatesProvider(apiClient);
     }
-   
+
 
     @Test
     @DisplayName("For default currency (EUR) returns USD rate")

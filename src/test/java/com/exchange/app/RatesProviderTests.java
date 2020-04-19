@@ -37,15 +37,7 @@ class RatesProviderTests {
         provider = new RatesProvider(apiClient);
     }
 
-    @Test
-    @DisplayName("Name")
-    void test() {
-        //given
-
-        //when
-
-        //then
-    }
+   
 
     @Test
     void name() {
@@ -55,6 +47,18 @@ class RatesProviderTests {
 
         //then
         
+        
+        
+    }
+
+    @Test
+    @DisplayName("Name")
+    void test() {
+        //given
+
+        //when
+
+        //then
     }
 
     @Test

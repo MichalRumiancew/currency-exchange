@@ -38,12 +38,23 @@ class RatesProviderTests {
     }
 
     @Test
+    @DisplayName("Name")
+    void test() {
+        //given
+
+        //when
+
+        //then
+    }
+
+    @Test
     void name() {
         //given
 
         //when
 
         //then
+        
     }
 
     @Test

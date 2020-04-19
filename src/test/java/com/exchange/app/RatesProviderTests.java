@@ -38,6 +38,15 @@ class RatesProviderTests {
     }
 
     @Test
+    void name() {
+        //given
+
+        //when
+
+        //then
+    }
+
+    @Test
     @DisplayName("For default currency (EUR) returns USD rate")
     void test1() {
 

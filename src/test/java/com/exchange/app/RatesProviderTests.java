@@ -37,14 +37,53 @@ class RatesProviderTests {
         provider = new RatesProvider(apiClient);
     }
 
+    class ApiClientStub implements ForeignExchangeRatesApiClient{
+
+        @Override
+        public ExchangeRates getLatestRates() {
+            return null;
+        }
+
+        @Override
+        public List<ExchangeRates> getLatestRatesForCurrencies(List<String> symbols) {
+            return null;
+        }
+
+        @Override
+        public ExchangeRates getLatestRates(String base) {
+            return null;
+        }
+
+        @Override
+        public ExchangeRates getHistoricalRates(DateTime date) {
+            return null;
+        }
+
+        @Override
+        public List<ExchangeRates> getHistoricalRates(DateTime start_at, DateTime end_at) {
+            return null;
+        }
+
+        @Override
+        public List<ExchangeRates> getHistoricalRates(DateTime start_at, DateTime end_at, List<String> symbols) {
+            return null;
+        }
+
+        @Override
+        public List<ExchangeRates> getHistoricalRates(DateTime start_at, DateTime end_at, String base) {
+            return null;
+        }
+    }
+
 
     @Test
     @DisplayName("For default currency (EUR) returns USD rate")
     void test1() {
 
         //given
+        ForeignExchangeRatesApiClient apiClient = new ApiClientStub();
         ExchangeRates exchangeRates = initializeExchangeRates();
-        Mockito.when(apiClient.getLatestRates()).thenReturn(exchangeRates);
+
 
         //when
         Double rateUSD = provider.getExchangeRateInEUR(Currency.getInstance(USD));
